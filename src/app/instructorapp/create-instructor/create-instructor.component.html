@@ -1,0 +1,54 @@
+<div class="card text-center col-md-4 offset-md-4" style="background-color:  #F0F4F7;">
+    
+<form  (ngSubmit) = "onSubmit()">
+   
+    <div class="form-group mr-2">
+        <label>Instructor Code </label>
+        <input type="text" class="form-control" id="inscode" name="inscode"
+            [(ngModel)]="instructor.instructorcode"/>
+    </div>
+
+    <div class="form-group">
+        <label>Instructor Name </label>
+        <input type="text" class="form-control" id="insname" 
+         name="insName" [(ngModel)]="instructor.name"/>
+         
+    </div>
+    <div class="form-group">
+        <label>Salary </label>
+        <input type="text" class="form-control" id="inssalary" 
+         name="inssalary" [(ngModel)]="instructor.salary"/>
+    </div>
+    
+    <div class="form-group">
+        <label> Joining Year </label>
+        <input type="text" class="form-control" id="insjoining" 
+         name="insjoining" [(ngModel)]="instructor.jobstartyear"/>
+    </div>
+    
+    <div class="form-group">
+        <label> Email ID </label>
+        <input type="text" class="form-control" id="insemail" 
+         name="insemail" [(ngModel)]="instructor.email"/>
+    </div>
+
+    <div class="form-group">
+        <label> Trainer Location </label>
+        <select class="browser-default custom-select" id="inslocation" name="inslocation"
+            [(ngModel)]="instructor.trainerlocation">
+            <option selected>Choose Location</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Chennai">Pune</option>
+            <option value="Chennai">Mumbai</option>
+           </select>
+    </div>
+
+    <div class="card-footer text-muted">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+    
+     
+</form>
+</div>

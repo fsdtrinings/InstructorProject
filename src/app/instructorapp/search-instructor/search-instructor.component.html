@@ -1,0 +1,43 @@
+
+<div class="col-md-6 offset-md-2" style="margin-top: 5%;">
+
+    <form (ngSubmit)="searchInstructor()"
+    style="margin-left: 40%;border-left-color: darkblue;" >
+       
+        <div class="form-group mr-2">
+            <label>Enter Instructor Code </label>
+            <input type="text" class="form-control"
+            [(ngModel)]="searchId"
+            id="inscode" name="inscode"/>
+        </div>
+        <button class="btn btn-success" type="submit" 
+           
+        style="margin-bottom: 10%;">Search</button>
+    </form>
+</div>
+<hr/>
+
+
+<div *ngIf="show" class="col-md-6 offset-md-4" style="margin-bottom: 10%;">
+        <div *ngIf="status; else elseBlock">
+
+            <div class="card">
+                <h5 class="card-header">{{instructor.name}}</h5>
+                <div class="card-body">
+                  <h5 class="card-title">{{expLevel}}</h5>
+                  <p class="card-text">Location is {{instructor.trainerlocation}} , Joining Year {{instructor.jobstartyear}}</p>
+                  <a href="#" class="btn btn-primary">Email</a>
+                </div>
+              </div>
+
+
+
+           
+        </div>
+        <ng-template #elseBlock>
+            <label class="badge badge-pill badge-warning"> Record Not Found </label>
+        </ng-template>
+</div>
+
+
+ 

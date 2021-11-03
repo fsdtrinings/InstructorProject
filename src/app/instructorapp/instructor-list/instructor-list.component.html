@@ -1,0 +1,38 @@
+
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th> Code</th>
+            <th> Name </th>
+            <th> Salary </th>
+            <th> JoiningYear</th>
+            <th> Email </th>
+            <th> Location </th>
+            <th> Update-Location </th>
+            
+            
+        </tr>
+    </thead>
+    <tr *ngFor="let instructor of instructors | 
+        paginate:{ id:'abc',
+                  itemsPerPage:7,
+                  currentPage:page,
+                  totalItems:totalRecords}">
+        <td> {{instructor.instructorcode}} </td>
+        <td> {{instructor.name}} </td>
+        <td> {{instructor.salary}} </td>
+        <td> {{instructor.jobstartyear}} </td>
+        <td> {{instructor.email}} </td>
+        <td> {{instructor.trainerlocation}} </td>
+        <td>
+            <button (click)="updateInstructorLocation(
+                instructor.instructorcode,instructor.trainerlocation)"
+             class="btn btn-info"> Update-Location</button>
+        </td>
+    </tr>
+</table>
+<div class="col-md-10 offset-md-4">
+    <pagination-controls id="abc" maxSixe="5" directionLink="true" 
+(pageChange)="page=$event"></pagination-controls>
+
+</div>
